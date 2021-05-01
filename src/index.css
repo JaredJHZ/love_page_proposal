@@ -1,13 +1,114 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+    .stripe-body {
+        background: repeating-linear-gradient(
+        to right,
+        red,
+        red 5px,
+        white 5px,
+        white 10px
+        );
+    }
+
+    .font-beautiful {
+        color: black; font-family: 'Trocchi', serif; 
+        font-size: 2rem; font-weight: normal; line-height: 48px; margin: 0;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .row-photos {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+      
+      /* Create four equal columns that sits next to each other */
+      .column-photos {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+      
+      .column-photos img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      .column-photos img:hover {
+        outline-style: solid;
+        outline-color: #red;
+      }
+
+      .img-amor {
+        width:35%;
+      }
+      
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column-photos {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+
+        .m {
+          align-items: center;
+        }
+
+        .img-amor {
+          width:100%;
+        }
+
+        .frase-amor {
+          width: 100% !important;
+          flex-flow: column;
+          align-items: center;
+          justify-content: center;
+          margin-top:5rem;
+        }
+        
+        .barra {
+          display: none;
+        }
+        
+        .convertible {
+          flex-flow: column;
+        }
+      }
+      
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column-photos {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .bg-hearts {
+        background: #fafafa;
+        background-image: radial-gradient(#d77 8.1333333333px, transparent 9.1333333333px), radial-gradient(#d77 8.1333333333px, transparent 9.1333333333px), radial-gradient(#c33 16.2666666667px, transparent 17.2666666667px), radial-gradient(#c33 16.2666666667px, transparent 17.2666666667px), linear-gradient(135deg, #d77 6%, #fafafa 6.45%, #fafafa 44%, transparent 46%, transparent 63%, #fafafa 63.25%), linear-gradient(45deg, transparent 39.75%, #c33 40.5%, #c33 60%, transparent 0, transparent 93.25%, #d77 94%);
+        background-size: 122px 122px;
+        background-position: 54.4933333333px 56.9333333333px, 68.32px 56.9333333333px, -8.1333333333px -8.1333333333px, 16.2666666667px -8.1333333333px, 0 0, 0 0;
+      }
+
+      .font-b {
+        font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+        font-weight: normal;
+            font-size: 1.75em;
+        letter-spacing: .2em;
+        line-height: 1.1em;
+        margin:0px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+
 }
